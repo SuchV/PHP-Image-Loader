@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Archiwum Zdjęć</title>
+    <title>Photo Archive</title>
 </head>
 <body>
     <div id="gora">
-        <h1>Archiwum zdjęć online</h1>
+        <h1>Photo Archive</h1>
         <form method="POST" action="strona2.php" enctype="multipart/form-data">
                 <label for="inImage">Plik:</label>
                 <input type="file" name="image" id="inImage">
-                <button type="submit" name="submit">Wyślij</button>
+                <button type="submit" name="submit">Send</button>
         </form>
     </div>
     <div id="dol">
@@ -22,7 +22,6 @@
             $path = 'images/'; 
             $location = $path . $_FILES['image']['name']; 
             move_uploaded_file($_FILES['image']['tmp_name'], $location);
-            // wersja testowa kodu 
             $pliki = glob("images/*.*");
             for ($i = 0; $i < count($pliki); $i++) {
                 $zdj = $pliki[$i];
